@@ -74,9 +74,163 @@ A continuación se describen los problemas que el equipo deberá resolver.
 \item Dado un numero binario de $n$ bits regresar su equivalente en decimal.
 \item Dada una tabla de verdad de $n$ bits generar la expresión booleana que genere de manera fidedigna las salidas de esta tabla.
 \end{enumerate}
+%imprimir codigo
+\lstnewenvironment{javaCode}[1][]
+{\lstset{
+    language=Java,
+    basicstyle=\scriptsize\ttfamily,
+    numbers=none, % Modificado: quitar los números de línea
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{purple},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    captionpos=b,
+    floatplacement=!h,
+    #1
+}}
+{}
 
 \section{Sección Problema 1}
-Contenido del primer problema para Yael...
+\item Dados 2 puntos $A \mbox{ y } B$ con coordenadas $x_{1}, y_{1}$ y $x_{2}, y_{2}$  respectivamente. Regresar la ecuación de la recta y el ángulo interno $\alpha$ que se forma entre el eje horizontal y la recta.
+
+\section{Introducción}
+El problema abordado en este proyecto se centra en la determinación de la ecuación de la recta y el ángulo interno $\alpha$ 
+formado entre dicha recta y el eje horizontal. Dados dos puntos, $A$ y $B$, con coordenadas $(x_1, y_1)$ y $(x_2, y_2)$ respectivamente, 
+el objetivo es desarrollar una solución matemática que permita calcular la pendiente de la recta, la intersección en el eje $Y$ y el ángulo $\alpha$.
+
+\section{Descripción del problema}
+En el contexto de geometría analítica, la tarea es obtener la ecuación de la recta que pasa por los puntos $A$ y $B$, 
+así como determinar el ángulo interno $\alpha$ que se forma entre la recta y el eje horizontal. 
+La solución implica el uso de conceptos trigonométricos y algebraicos para abordar este problema geométrico de manera precisa y eficiente.
+
+\section{Diseño de la solución}
+La solución propuesta emplea tres funciones matemáticas clave. Primero, se calcula la inclinación de la recta mediante la función \texttt{inclinación}, 
+luego se determina la intersección en el eje $Y$ con la función \texttt{intersección}, y finalmente se calcula el ángulo interno $\alpha$ con la función \texttt{ángulo}. 
+Estas funciones trabajan en conjunto para proporcionar la ecuación de la recta y el ángulo deseado.
+
+\section{Desarrollo de la solución}
+En la ecuación de la recta, si dos puntos distintos $P(x_{1}, y_{1})$ y $Q(x_{2}, y_{2})$ se ubican en la curva $y=f(x)$, 
+la pendiente de la recta secante que une los dos puntos es:
+
+\begin{equation}
+    m_{sec}=\frac{y_{2} - y_{1}}{x_{2} - x_{1}} = \frac{f_{(x2)} - f_{(x1)} }{x_{2} - x_{1}}/
+    \label{eqn:rectaPendiente}
+\end{equation}
+
+La forma punto-pendiente de la ecuación de la recta, con una coordenada especifica en el plano cartesiano se define como:
+\begin{equation}
+    b = y_{1} - m * x_{1}
+\end{equation}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 6 cm]{imagen/GraficaEcuacionRecta.png}
+    \caption{Gráfica de la ecuación de la recta}
+    \label{fig:GraficaEcuacionRecta}
+\end{figure}
+
+Utilizando este método, puedes encontrar la ecuación de la recta a partir de dos puntos. Recuerda que si los dos puntos son idénticos la recta será una linea vertical \cite{rectaPendiente}
+
+El algoritmo de solución para encontrar la ecuación de la recta pendiente  (ec. \ref{eqn:rectaPendiente}) comienza solicitando al usuario dos puntos $P(x_{1}, y_{1})$ y $Q(x_{2}, y_{2})$.
+
+\begin{javaCode}
+
+Scanner puntos = new Scanner (System.in);
+        
+    //Solicitar puntos para la ecuacion de la recta  
+    System.out.println("""
+                        Ingresa las coordenadas del punto 1.
+                        seperadas por una coma (x,y):
+                           """);
+    
+    String[] punto1 =puntos.nextLine().split(",");
+        
+    System.out.println("""
+                        Ingresa las coordenadas del punto 1.
+                        seperadas por una coma (x,y):
+                        """);
+    
+    String[] punto2 =puntos.nextLine().split(",");
+        
+    //cerrar el escaneo
+    puntos.close();
+        
+\end{javaCode}
+
+Posteriormente se convierten los valores de los puntos $P(x_{1}, y_{1})$ y $Q(x_{2}, y_{2})$. en valores enteros para ser utilizados  en la ecuación de la recta (ec. \ref{eqn:rectaPendiente}).
+
+\begin{javaCode}
+    //Asignar valor de coordenadas a x,y para dos puntos
+    int x1= Integer.parseInt(punto1[0].trim());
+    int y1= Integer.parseInt(punto1[1].trim());
+       
+    int x2= Integer.parseInt(punto2[0].trim());
+    int y2= Integer.parseInt(punto2[1].trim());
+\end{javaCode}
+
+Una vez normalizado los datos, se calcula la inclinación de la recta y calcular la intersección de la recta.
+
+\begin{javaCode}
+    //Calculo para la inclinacion de la recta  
+    Double m = (double)(y2 - y1)/(x2 - x1);
+       
+    //Calcular Interseccion de la recta
+    Double b= y1 -(m * x1);
+\end{javaCode}
+
+Por ultimo, se imprime la ecuación de la recta:
+\begin{javaCode}
+    //Imprimir el resultado 
+        System.out.println("Ecuacion de la recta: \n" +
+                            m + " x + " + b +" y ");
+\end{javaCode}
+
+\section{Depuración y pruebas}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \textbf{Número de Prueba} & \textbf{Datos Ingresados} & \textbf{\(\boldsymbol{x_1}\)} & \textbf{\(\boldsymbol{y_1}\)} & \textbf{\(\boldsymbol{x_2}\)} & \textbf{\(\boldsymbol{y_2}\)} \\
+    \hline
+    1 & (2, 3), (4, 7) & 2 & 3 & 4 & 7 \\
+    \hline
+    2 & (-1, 0), (3, 4) & -1 & 0 & 3 & 4 \\
+    \hline
+    3 & (0, 0), (0, 5) & 0 & 0 & 0 & 5 \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Número de Prueba} & \textbf{\(m\)} & \textbf{\(b\)} \\
+    \hline
+    1 & 2.0 & -1.0 \\
+    \hline
+    2 & 1.0 & 1.0 \\
+    \hline
+    3 & \text{--} & \text{--} \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Número de Prueba} & \textbf{\(\alpha\)} \\
+    \hline
+    1 & \(63.43^\circ\) \\
+    \hline
+    2 & \(63.43^\circ\) \\
+    \hline
+    3 & \(90^\circ\) \\
+    \hline
+    \end{tabular}
+
 \newpage
 Contenido del primer problema...
 \newpage
