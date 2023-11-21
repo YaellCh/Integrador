@@ -106,7 +106,186 @@ Contenido del cuarto problema...
 \section{Sección Problema 5}
 Contenido del quinto problema para Brian...
 \newpage 
-Contenido del quinto problema...
+    
+\begin{document}
+
+\title{Conversión de números binarios a decimales con programa en Java}
+\author{Brayan Hernandez Martinez / Mixquiahuala de Juarez / 230110578@itsoeh.edu.mx}
+\maketitle
+
+%Resumen, se escribe al final y contiene máximo 250 palabras
+\begin{abstract}
+El reporte analiza el concepto de como se hace la conversion de un numero binario a numero decimal, dando la informacion necesaria para comprender la funcion del programa, los pasos que lleva acabo y la explicacion se lleva acabo. 
+\end{abstract}
+
+\section{Introducción}
+En el campo de la computación, es común la necesidad de convertir números binarios a su equivalente en decimal. Para facilitar esta conversión, se puede utilizar un programa en Java que realice el cálculo de forma automática. En este artículo, presentamos un programa en Java que toma un número binario ingresado por el usuario y lo convierte a su equivalente en decimal.
+
+\section{Diseño de solucion }
+
+\begin{itemize}
+  \item Se solicita al usuario ingresar un numero binario de n bits.
+  \item El numero solo se leera si son 0's, 1's 
+  \item Se caculara el numero dando su equivalente e decimal
+  \item Se lanzara el resulatdo
+\end{itemize}
+
+\section{Programa en Java}
+A continuación se muestra el código del programa en Java para la conversión de números binarios a decimales:
+
+\begin{lstlisting}[style=javaStyle]
+import java.util.Scanner;
+import java.math.BigInteger;
+
+public class NewClass {
+    public static void main(String[] args) {
+        Scanner bin = new Scanner(System.in);
+        boolean continuar = true;
+\end{lstlisting}
+En este programa se uso un bluce el cual nos va a permitir volver a usar este programa las veces que sean necesarias.
+
+\section{Pasos}
+// Se solicita al usuario ingresar un numero binario
+\begin{lstlisting}[style=javaStyle]
+// Bucle que permite al usuario ingresar números binarios hasta que ingrese 'x'
+
+        while (continuar) {
+        
+            System.out.print("Ingrese un número en binario (o 'x' para terminar ): ");
+            
+            String entrada = bin.nextLine();
+\end{lstlisting}
+
+// Para el usuario al no requerir mas del programa al seleccionar x el programa dejara de repetir el ciclo y finalizara.
+
+\begin{lstlisting}[style=javaStyle]
+                 // Si se ingresa 'x', el bucle se detiene
+            if (entrada.equalsIgnoreCase("x")) {
+                continuar = false;
+                continue;
+            }
+\end{lstlisting}
+
+// En esta línea, se declara una variable llamada decimal del tipo BigInteger. Se utiliza para almacenar el valor decimal resultante después de convertir el número binario ingresado. La función convertirBinarioADecimal se llama con el argumento entrada, que es el número binario ingresado por el usuario.
+
+\begin{lstlisting}[style=javaStyle]
+// Llama al método convertirBinarioADecimal para convertir el número binario ingresado a decimal
+            BigInteger decimal = convertirBinarioADecimal(entrada);
+            
+\end{lstlisting}
+
+// Esta línea imprime en la consola el mensaje "El número en decimal es: " seguido del valor almacenado en la variable decimal. Es decir, muestra el resultado de la conversión en formato decimal.
+
+\begin{lstlisting}[style=javaStyle]
+System.out.println("El número en decimal es: " + decimal);
+
+\end{lstlisting}
+
+// Estas líneas definen el método convertirBinarioADecimal, que toma un argumento de tipo String llamado binario. El método crea un nuevo objeto BigInteger utilizando el constructor que toma dos argumentos: el número binario (binario) y la base (2) que se utiliza para interpretar el número binario y convertirlo a decimal. 
+
+\begin{lstlisting}[style=javaStyle]
+lic static BigInteger convertirBinarioADecimal(String binario) {
+        return new BigInteger(binario, 2);
+
+\end{lstlisting}
+\section{Solución}
+Para convertir un número binario a decimal, se utiliza la siguiente ecuación:
+
+\[
+\text{{decimal}} = \sum_{i=0}^{n-1} \left( \text{{binarioString}}[i] \times 2^{n-1-i} \right)
+\]
+
+\text{{binarioString}} Donde es el número binario ingresado por el usuario, $n$ es la longitud del número binario y $i$ es la posición del dígito en el número binario. En cada iteración del bucle, se verifica si el dígito en la posición $i$ es igual a '1'. Si es así, se suma el valor correspondiente a {{decimal}} utilizando la base actual, que se incrementa en cada iteración multiplicándola por 2.
+
+\section{Codigo en general }
+\begin{lstlisting}[style=javaStyle]
+import java.util.Scanner;
+import java.math.BigInteger;
+
+public class NewClassimport java.math.BigInteger;
+    public static void main(String[] args) {
+        Scanner bin = new Scanner(System.in);
+        boolean continuar = true;
+       
+        // Bucle que permite al usuario ingresar números binarios hasta que ingrese 'x'
+        while (continuar) {
+            System.out.print("Ingrese un número en binario (o 'x' para terminar ): ");
+            String entrada = bin.nextLine();
+
+             // Si se ingresa 'x', el bucle se detiene
+            if (entrada.equalsIgnoreCase("x")) {
+                continuar = false;
+                continue;
+            }
+
+            // Llama al método convertirBinarioADecimal para convertir el número binario ingresado a decimal
+            BigInteger decimal = convertirBinarioADecimal(entrada);
+            System.out.println("El número en decimal es: " + decimal);
+        }
+    }
+
+    public static BigInteger convertirBinarioADecimal(String binario) {
+        return new BigInteger(binario, 2);
+    }
+}
+\end{lstlisting}
+
+\section{Diagrama de flujo}
+
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{tikzpicture}[node distance=2cm]
+
+\node (start) [startstop] {Comienzo};
+\node (input) [io, below of=start] {Ingresar número binario};
+\node (decision) [decision, below of=input, yshift=-0.5cm] {¿Es 'x'?};
+\node (stop) [startstop, below of=decision, yshift=-0.5cm] {Terminar};
+\node (convert) [process, right of=decision, xshift=2cm] {Convertir a decimal};
+\node (output) [io, below of=convert] {Mostrar número decimal};
+
+\draw [arrow] (start) -- (input);
+\draw [arrow] (input) -- (decision);
+\draw [arrow] (decision) -- node[anchor=south] {sí} (stop);
+\draw [arrow] (decision) -- node[anchor=south] {no} (convert);
+\draw [arrow] (convert) -- (output);
+\draw [arrow] (output) -- +(0,-1.5cm) -- +(-4.5cm,-1.5cm) -- +(0,-0.5cm) -- (input);
+
+\end{tikzpicture}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width = 6 cm]{}
+    \caption{Diagrama de flujo}
+\end{figure}
+
+\section{Tabla de corridas}
+\begin{table}[ht]
+  \centering
+  \large
+  \begin{tabularx}{\textwidth}{|X|X|X|}
+    \hline
+    \textbf{Num. De corridas} & \textbf{Ejemplo} & \textbf{Resultado} \\
+    \hline
+    Num 1 & 1100 & 12 \\
+    Num 2 & 10111 & 23 \\
+    Num 3 & 1001111 & 79 \\
+    Num 4 & 1000101 & 69 \\
+    Num 5 & 101010100 & 340 \\
+    \hline
+  \end{tabularx}
+\end{table}
+
+
+\section{Conclusiones}
+En este artículo, se presentó un programa en Java para convertir números binarios a su equivalente en decimal. El programa utiliza un enfoque directo y eficiente, aprovechando la clase BigInteger de Java. Al proporcionar un número binario como entrada, el programa realiza los cálculos necesarios y muestra el resultado en formato decimal.
+
+La conversión de números binarios a decimales es un proceso fundamental en el campo de la computación y tiene aplicaciones en diversos escenarios. El programa presentado ofrece una solución práctica y sencilla para llevar a cabo esta conversión.
+\end{document}
+
 \newpage 
 
 
