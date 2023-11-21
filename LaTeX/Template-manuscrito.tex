@@ -73,8 +73,160 @@ Contenido del primer problema...
 \newpage
 
 
-\section{Sección Problema 2}
-Contenido del segundo problema...
+\section{Sección Problema 2: Solucion de ecuaciones cuadraticas sobre el conjumto de numeros reales }
+%autor del reporte
+\author{
+\IEEEauthorblockN{
+1\textsuperscript{ro} Irving Maldonado Oguin}
+\IEEEauthorblockA{\textit{ITICs} \\
+\textit{ITSOEH}\\
+Hidalgo, Mixquiahuala \\
+230110716@itsoeh.edu.mx}
+
+}
+\maketitle
+
+\section{problema 2 La formula general}
+
+
+\maketitle
+
+\begin{abstract}
+
+El reporte analiza la resolución de ecuaciones cuadráticas o de segundo grado por medio de la fórmula general. Explica la fórmula general y los posibles resultados de la misma. Destaca la importancia de la fórmula y los procesos usados para dar resultados a la fórmula general.
+\end{abstract}
+
+\section{Introduction}
+ La formula general es util para la resolución de ecuaciones cuadraticas, sirve para encontrar las raices de una ecuacion cuadratica. Esta cuenta con tres reusultados llamados termino cuadratico, termino lineal y termino independiente.
+
+
+\section{Diagrama de flujo}
+A continuacion se muestra el diagrama de flujo el cual es la base del programa
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 6 cm]{imagenes/Imagen1.jpeg}
+    \caption{Gráfica de la ecuación de la recta}
+    \label{fig:GraficaEcuacionRecta}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Programa en java}
+seguidamente se mostrara el programa de java donde se trabajo con la formula general.
+\begin{javaCode}
+    
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+    
+        // Crear un objeto Scanner para leer la entrada del usuario
+        \begin{javaCode}
+        Scanner coeficiente = new Scanner(System.in);
+        \end{javaCode}
+        // Solicitar al usuario que ingrese el valor de A
+        \begin{javaCode}
+        System.out.println("Estimado usuario, por favor ingrese el valor de A: ");
+        double a = coeficiente.nextDouble();
+        \end{javaCode}
+        // Solicitar al usuario que ingrese el valor de B
+        \begin{javaCode}
+        System.out.println("Estimado usuario, por favor ingrese el valor de B: ");
+        double b = coeficiente.nextDouble();
+        \end{javaCode}
+        // Solicitar al usuario que ingrese el valor de C
+        \begin{javaCode}
+        System.out.println("Estimado usuario, por favor ingrese el valor de C: ");
+        double c = coeficiente.nextDouble();
+        \end{javaCode}
+        // Cerrar el objeto Scanner
+        \begin{javaCode}
+        coeficiente.close();
+        \end{javaCode}
+        // Calcular el discriminante de la ecuación cuadrática
+        \begin{javaCode}
+        double discriminante = b * b - 4 * a * c;
+        \end{javaCode}
+        // Verificar si el discriminante es mayor que 0
+        \begin{javaCode}
+        if (discriminante > 0) {
+            // Calcular las dos soluciones de la ecuación cuadrática
+            double x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+            double x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+        \end{javaCode}
+            // Mostrar las soluciones
+            \begin{javaCode}
+            System.out.println("Las soluciones son x1 = " + x1 + " y x2 = " + x2);
+        }
+        \end{javaCode}
+        // Verificar si el discriminante es igual a 0
+        \begin{javaCode}
+        else if (discriminante == 0) {
+        \end{javaCode}
+            // Calcular la solución única de la ecuación cuadrática
+            \begin{javaCode}
+            double x = -b / (2 * a);
+            \end{javaCode}
+            // Mostrar la solución única
+            \begin{javaCode}
+            System.out.println("La solución es: " + x);
+        }
+        \end{javaCode}
+        // El discriminante es negativo, lo que significa que no hay soluciones reales
+        \begin{javaCode}
+        else {
+            System.out.println("no cuenta con soluciones reales.");
+        }
+    }
+}
+
+
+\end{javaCode}
+
+
+
+
+
+
+\section{Tabla de corridas}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+No. & A & B & C & Resultado \\
+\hline
+1 & 19 & 17 & 18 & no cuenta con soluciones reales. \\
+\hline
+2 & 10 & 15 & 5 & La solución es:$x_1 = -0.5$ y $x_2=-1.0$ \\
+\hline
+3 & 1 & -5 & 6 & La solución es:$x_1 = 3.0$ y $x_2=2.0$ \\
+\hline
+4 & 2 & 4 & -6 &La solución es:$x_1 = 1.0$ y $x_2=-3.0$ \\
+\hline
+5 & 3 & -8 & 4 & La solución es:$x_1 = 2.0$ y $x_2=0.66666$ \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+\section{Conclusión}
+La formula general es de mucha utilidad al resolver una ecuación cuadrática. El programa da solución a dichas ecuaciones con la formula general, evitando hacer el paso a paso para resolverlo, muestra al usuario una de las tres soluciones dependiendo de la ecuación, estas soluciones son tres si el discrimínate es mayor a 0 la ecuación cuenta con dos soluciones, si es igual a 0, tienen una única solución y si es menor a 0 no tiene solución real.
+
 \newpage
 Contenido del segundo problema...
 \newpage
