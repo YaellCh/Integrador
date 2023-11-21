@@ -7,3 +7,6 @@
 
 # Alejandro Cruz Martinez
 ## [Mi pagina](https://alejandrocruzmartinez.github.io/)
+
+# Irving Maldonado Oguin
+## [Mi pagina](https://ignaciomal.github.io/)
