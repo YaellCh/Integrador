@@ -248,57 +248,37 @@ Contenido del tercer problema para Alejandro...
 \newpage 
 \begin{abstract}
     
-    El reporte del problema indica como calcular la distancia de dos puntos y su ubicación ya que se puede encontrar dentro o fuera de una circunferencia además nos da una posible solución a través de un programa en Netbeans
+    El reporte del problema indica como calcular la distancia de dos puntos y su ubicación ya que se puede encontrar dentro o fuera de una circunferencia además también nos da una posible solución a través de un programa 
 \end{abstract}
 
 
-
-
-
 \section{Introducción}
-El cálculo de la distancia entre dos puntos y determinar si se encuentran dentro de una circunferencia es una tarea común en programación o telecumunicione para ver si una antena de resepcion de red se encuentra en su area .Para esto podemos utilizar un programa en java que realice el calculo de la distancia y su ubicación dado por dos puntos ingresados por el usuario 
-\section{ecuación de la distancia y su ubicacion}
+El cálculo de la distancia entre dos puntos y determinar si se encuentran dentro de una circunferencia es una tarea común en programación o en telecomunicaciones para saber si una antena de recepción de red se encuentra dentro de su zona o área. Para esto podemos utilizar un programa en java que realice el cálculo de la distancia y su ubicación dado por dos puntos ingresados por el usuario 
+\section{ecuación de la distancia}
 En la ecuación de la distancia entre dos puntos $p_1 = (x_1, y_1)$ y $p_2 = (x_2, y_2)$, la distancia entre los dos puntos se calcula utilizando la fórmula de la distancia:
-\text{distancia} = \sqrt{{(x_2 - x_1)^2 + (y_2 - y_1)^2}}, para saber si el punto se encuentra dentro del area utilizamos la siguiente formula
-\text{ubicacion} = \sqrt{distancia<=radio},si esto se cumple entonces si se encuentra dentro de la circunferencia
+\text{distancia} = \sqrt{{(x_2 - x_1)^2 + (y_2 - y_1)^2}}
 
-
-
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 6 cm]{latex-imagenes/imagen7.png}
+    \caption{Gráfica de la distancia de dos puntos}
+    \label{fig:Grafica de la distancia de dos puntos }
+\end{figure}
 \section{Diagrama de flujo}
 A continuación veremos el diagrama de flujo que fue la base para el desarrollo del programa
 \begin{figure}[h!]
     \centering
-    \includegraphics[width = 9 cm]{latex-imagenes/imagen.jpeg}
+    \includegraphics[width = 9 cm]{latex-imagenes/Imagen2.png}
     \caption{se muestra el diagrama que fue base para diseñar el programa}
     \label{fig:diagrama de flujo}
 \end{figure}
-
-
-
-
-
-
-
 \section{Programa en Java}
-A continuación se muestra el código en Java para calcular la distancia entre dos puntos y verificar si se encuentran dentro de una circunferencia:
+A continuación, se muestra el código en Java para calcular la distancia entre dos puntos y verificar si se encuentran dentro de una circunferencia:
 
 
    \begin{javaCode}
        
-   
-
-   import java.util.Scanner;
-/**
- *
- * @author cruzm
- */
-public class cordenadas {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        
         
          Scanner dato = new Scanner(System.in);
         \end{javaCode}
@@ -370,60 +350,29 @@ public class cordenadas {
   
  
     \end{javaCode}
-
-    
-   
-
-
-
-
-
-
-
-
-
-
         \section{tabla de corridas}
  A continuación se muestra una tabla de corridas o pruebas que se realizaron con el programa en java:
 
 
 
-    \begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-No.corrida & x1 de c & y1 de c & radio & x2 de t & y2 de t & Resultado \\
-\hline
-No.1 & 1 & 2 & 5 & 2 & 1 & El punto T está dentro de la circunferencia \\
-\hline
-No.2 & 3 & 1 & 7 & 4 & 5 & El punto T está dentro de la circunferencia \\
-\hline
-No.3 & 7 & 6 & 3 & 5 & 10 &  El punto T no está dentro de la circunferencia \\
-\hline
-No.4 & 4 & 5 & 2 & 6 & 8 &  El punto T no está dentro de la circunferencia \\
-\hline
-No.5 & 2 & 3 & 3 & 4 & 6 &  El punto T no está dentro de la circunferencia \\
-\hline
-    \end{tabular} 
+   \begin{figure}[h!]
+    \centering
+    \includegraphics[width = 10 cm]{latex-imagenes/Imagen3.png}
+    \caption{Tabla de pruebas}
+    \label{fig:Grafica de la distancia de dos puntos }
+\end{figure}
 
 
 
 
 \section{Conclusión}
-El programa se encarga de encontrar la distancia entre dos puntos en el área de una circunferencia. El programa usa la formula de la distancia , con ella encuentra la distancia entre dos puntos, luego es importante solicitar al usuario el radio, se transforma en positivo el radio en caso de ser negativo, después si la distancia es menor o igual al  radio, el punto T esta dentro de la circunferencia.
+El programa se encarga de encontrar la distancia entre dos puntos en el área de una circunferencia, con ella encuentra la distancia entre dos puntos, luego es importante solicitar al usuario el radio, se transforma en positivo el radio en caso de ser negativo, con ello podremos ver si el punto t se encuentra dentro del área 
    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{thebibliography}{00}
+    \bibitem{rectaPendiente}
+    Fórmula de la distancia (artículo). (s/f). Khan Academy. Recuperado el 21 de noviembre de 2023, de https://es.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-distance-and-midpoints/a/distance-formula
+\end{thebibliography}
 
 
 
