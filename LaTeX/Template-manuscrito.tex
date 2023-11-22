@@ -243,10 +243,199 @@ Contenido del segundo problema...
 \newpage
 
 
-\section{Sección Problema 3}
+\sección{Problema 3:Cálculo de la distancia entre dos puntos en el área de una circunferencia}
 Contenido del tercer problema para Alejandro...
 \newpage 
-Contenido del tercer problema...
+\begin{abstract}
+    
+    El reporte del problema indica como calcular la distancia de dos puntos y su ubicación ya que se puede encontrar dentro o fuera de una circunferencia además nos da una posible solución a través de un programa en Netbeans
+\end{abstract}
+
+
+
+
+
+\section{Introducción}
+El cálculo de la distancia entre dos puntos y determinar si se encuentran dentro de una circunferencia es una tarea común en programación o telecumunicione para ver si una antena de resepcion de red se encuentra en su area .Para esto podemos utilizar un programa en java que realice el calculo de la distancia y su ubicación dado por dos puntos ingresados por el usuario 
+\section{ecuación de la distancia y su ubicacion}
+En la ecuación de la distancia entre dos puntos $p_1 = (x_1, y_1)$ y $p_2 = (x_2, y_2)$, la distancia entre los dos puntos se calcula utilizando la fórmula de la distancia:
+\text{distancia} = \sqrt{{(x_2 - x_1)^2 + (y_2 - y_1)^2}}, para saber si el punto se encuentra dentro del area utilizamos la siguiente formula
+\text{ubicacion} = \sqrt{distancia<=radio},si esto se cumple entonces si se encuentra dentro de la circunferencia
+
+
+
+\section{Diagrama de flujo}
+A continuación veremos el diagrama de flujo que fue la base para el desarrollo del programa
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 9 cm]{latex-imagenes/imagen.jpeg}
+    \caption{se muestra el diagrama que fue base para diseñar el programa}
+    \label{fig:diagrama de flujo}
+\end{figure}
+
+
+
+
+
+
+
+\section{Programa en Java}
+A continuación se muestra el código en Java para calcular la distancia entre dos puntos y verificar si se encuentran dentro de una circunferencia:
+
+
+   \begin{javaCode}
+       
+   
+
+   import java.util.Scanner;
+/**
+ *
+ * @author cruzm
+ */
+public class cordenadas {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        
+         Scanner dato = new Scanner(System.in);
+        \end{javaCode}
+        solicitamos al usuario las cordenadas el punto C (x1,y1)
+       \begin{javaCode}
+        System.out.print("Ingrese las coordenada del centro de la circunferencia primero x1: ");
+        int x1 = dato.nextInt();
+        System.out.print("Ingrese las coordenada del centro de la circunferencia despues y1: ");
+        int y1 = dato.nextInt();
+         \end{javaCode}
+         solicitamos el radio de la circunferencia
+       
+        \begin{javaCode}
+        System.out.println("Ingrese el radio de la circunferencia: ");
+        int radio = dato.nextInt();
+         \end{javaCode}
+         
+        solicitamos al usuario las coordenadas del punto T (x2,y2)
+       \begin{javaCode}
+        System.out.print("Ingrese las coordenada del punto T X2: ");
+        int x2 = dato.nextInt();
+        System.out.print("Ingrese las coordenada del punto T Y2: ");
+        int y2 = dato.nextInt();
+        \end{javaCode}
+         Cálculo de la distancia entre el punto C y el punto T
+        \begin{javaCode}
+        double distancia = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        \end{javaCode}
+         imprimimos la distancia
+          \begin{javaCode}
+         System.out.println("la distancia es de "+distancia);
+          \end{javaCode}
+       
+        si el radio es negativo lo pasamos a positivo
+         \begin{javaCode}
+        int radio2=radio*-1;
+\end{javaCode}
+         Si la distancia es menor o igual al radio, el punto T está dentro de la circunferencia     
+       
+        \begin{javaCode}
+                    if(radio<0){
+            
+        
+        int radio2=radio*-1;
+        if (distancia <= radio2) {
+            System.out.println("El punto T está dentro de la circunferencia");
+        } else {
+            System.out.println("El punto T no está dentro de la circunferencia");
+        }
+        }
+        
+       if(radio>0){
+           
+       
+            if (distancia <= radio) {
+            System.out.println("El punto T está dentro de la circunferencia");
+        } else {
+            System.out.println("El punto T no está dentro de la circunferencia");
+        }
+    }
+    
+    
+    }
+    
+}
+
+
+
+  
+ 
+    \end{javaCode}
+
+    
+   
+
+
+
+
+
+
+
+
+
+
+        \section{tabla de corridas}
+ A continuación se muestra una tabla de corridas o pruebas que se realizaron con el programa en java:
+
+
+
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+No.corrida & x1 de c & y1 de c & radio & x2 de t & y2 de t & Resultado \\
+\hline
+No.1 & 1 & 2 & 5 & 2 & 1 & El punto T está dentro de la circunferencia \\
+\hline
+No.2 & 3 & 1 & 7 & 4 & 5 & El punto T está dentro de la circunferencia \\
+\hline
+No.3 & 7 & 6 & 3 & 5 & 10 &  El punto T no está dentro de la circunferencia \\
+\hline
+No.4 & 4 & 5 & 2 & 6 & 8 &  El punto T no está dentro de la circunferencia \\
+\hline
+No.5 & 2 & 3 & 3 & 4 & 6 &  El punto T no está dentro de la circunferencia \\
+\hline
+    \end{tabular} 
+
+
+
+
+\section{Conclusión}
+El programa se encarga de encontrar la distancia entre dos puntos en el área de una circunferencia. El programa usa la formula de la distancia , con ella encuentra la distancia entre dos puntos, luego es importante solicitar al usuario el radio, se transforma en positivo el radio en caso de ser negativo, después si la distancia es menor o igual al  radio, el punto T esta dentro de la circunferencia.
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \newpage 
 
 
