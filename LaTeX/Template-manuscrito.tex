@@ -99,10 +99,14 @@ Contenido del tercer problema para Alejandro...
 
 
 \section{Introducción}
-El cálculo de la distancia entre dos puntos y determinar si se encuentran dentro de una circunferencia es una tarea común en programación o en telecomunicaciones para saber si una antena de recepción de red se encuentra dentro de su zona o área. Para esto podemos utilizar un programa en java que realice el cálculo de la distancia y su ubicación dado por dos puntos ingresados por el usuario 
-\section{ecuación de la distancia}
-En la ecuación de la distancia entre dos puntos $p_1 = (x_1, y_1)$ y $p_2 = (x_2, y_2)$, la distancia entre los dos puntos se calcula utilizando la fórmula de la distancia:
-\text{distancia} = \sqrt{{(x_2 - x_1)^2 + (y_2 - y_1)^2}}
+El cálculo de la distancia entre dos puntos y determinar si se encuentran dentro de una circunferencia es una tarea común en programación . Para esto podemos utilizar un programa en java que realice el cálculo de la distancia y su ubicación dado por dos puntos ingresados por el usuario 
+
+\section{Desarrollo}
+La formula de la distancia entre dos puntos $p = (x_1, y_1)$ y $q = (x_2, y_2)$, la distancia entre los dos puntos se calcula utilizando la fórmula de la distancia:
+\text{distancia} = $\sqrt{{(x_2 - x_1)^2 + (y_2 - y_1)^2}}$,
+Esta se utiliza porque proporciona una medida precisa de la distancia entre dos puntos en un plano. Además, al elevar al cuadrado las coordenadas, se eliminan los signos negativos y se preserva la información sobre la magnitud  de las diferencias. Esto puede ser útil en ciertos contextos donde solo se necesita comparar distancias y no se requiere la distancia exacta en sí, ejemplo:en telecomunicaciones para saber si una antena de recepción de red se encuentra en su zona o la distancia en la que se encuentra.
+también se utilizo una condicional (if) para saber si se encuentra dentro o fuera de la circunferencia dada por el radio ingresado por el usuario.
+
 
 \begin{figure}[h!]
     \centering
@@ -214,10 +218,14 @@ A continuación, se muestra el código en Java para calcular la distancia entre 
 \section{Conclusión}
 El programa se encarga de encontrar la distancia entre dos puntos en el área de una circunferencia, con ella encuentra la distancia entre dos puntos, luego es importante solicitar al usuario el radio, se transforma en positivo el radio en caso de ser negativo, con ello podremos ver si el punto t se encuentra dentro del área 
    
-
 \begin{thebibliography}{00}
     \bibitem{rectaPendiente}
-    Fórmula de la distancia (artículo). (s/f). Khan Academy. Recuperado el 21 de noviembre de 2023, de https://es.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-distance-and-midpoints/a/distance-formula
+    Fórmula de la distancia (artículo). (s/f). Khan Academy. Recuperado el 21 de noviembre de 2023, de https://es.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-distance-and-midpoints/a/distance-formula.
+    
+    \bibitem[calculo de la distancia]
+    Fórmula de la distancia. (2011, February 20).https://es.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-distance-and-midpoints/v/distance-formula}
+    {https://es.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-distance-and-midpoints/v/distance-formula}
+
 \end{thebibliography}
 
 
